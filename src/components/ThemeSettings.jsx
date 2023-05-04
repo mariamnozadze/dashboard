@@ -73,7 +73,7 @@ const ThemeSettings = () => {
                   >
                     <BsCheck
                       className={`ml-2 text-2xl text-white ${
-                        item.color === currentColor ? "block" : "hidden"
+                        false ? "block" : "hidden"
                       }`}
                     />
                   </button>
