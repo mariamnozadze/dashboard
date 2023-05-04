@@ -1,16 +1,33 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { FiSettings } from 'react-icons/fi';
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { FiSettings } from "react-icons/fi";
+import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
-import './App.css';
+import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import {
+  Ecommerce,
+  Orders,
+  Calendar,
+  Employees,
+  Stacked,
+  Pyramid,
+  Customers,
+  Kanban,
+  Line,
+  Area,
+  Bar,
+  Pie,
+  Financial,
+  ColorPicker,
+  ColorMapping,
+  Editor,
+} from "./pages";
+import "./App.css";
 
-import { useStateContext } from './contexts/ContextProvider';
+import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
-  const { activeMenu } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings } = useStateContext();
 
   return (
     <div>
@@ -21,6 +38,7 @@ const App = () => {
               <button
                 type="button"
                 className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+                onClick={() => setThemeSettings(true)}
                 style={{ background: "blue", borderRadius: "50%" }}
               >
                 <FiSettings />
@@ -46,7 +64,8 @@ const App = () => {
             </div>
 
             <div>
-            <ThemeSettings />
+              {/* only show themeSettings when it's true */}
+              {themeSettings && <ThemeSettings />}
 
               <Routes>
                 {/* Dashboard */}
