@@ -27,12 +27,11 @@ export const ContextProvider = ({ children }) => {
     setThemeSettings(false);
   };
 
-  const setColor = (e) => {
-    console.log(e);
-    setCurrentColor(e.target.value);
+  const setColor = (color) => {
+    setCurrentColor(color);
 
     //next time user comes, the same color is activated
-    localStorage.setItem("colorMode", e.target.value);
+    localStorage.setItem("colorMode", color);
 
     //to close after changing color theme
     setThemeSettings(false);
