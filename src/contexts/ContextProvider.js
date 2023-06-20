@@ -1,6 +1,6 @@
 import React, { useState, createContext, useContext } from "react";
 
-const stateContext = createContext();
+const StateContext = createContext();
 
 const initialState = {
   chat: false,
@@ -13,10 +13,10 @@ export const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(true);
 
   return (
-    <stateContext.Provider value={{ activeMenu, setActiveMenu }}>
+    <StateContext.Provider value={{ activeMenu, setActiveMenu }}>
       {children}
-    </stateContext.Provider>
+    </StateContext.Provider>
   );
 };
 
-export const useStateContext = () => useContext(stateContext);
+export const useStateContext = () => useContext(StateContext);
