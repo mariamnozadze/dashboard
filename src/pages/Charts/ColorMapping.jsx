@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SparkLine = () => {
+const ColorMapping = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const SparkLine = () => {
   )
 }
 
-export default SparkLine
+export default ColorMapping

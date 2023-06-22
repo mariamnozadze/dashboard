@@ -1,11 +1,11 @@
 import React from 'react'
 
-const SparkLine = () => {
+const Editor = () => {
   return (
     <div>
-      
+      editor
     </div>
   )
 }
 
-export default SparkLine
+export default Editor
