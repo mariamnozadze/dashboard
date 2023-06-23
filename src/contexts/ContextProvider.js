@@ -11,9 +11,18 @@ const initialState = {
 
 export const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(true);
+  const [isClicked, setIsClicked] = useState(initialState);
+
+  //only change the value that has been cliked and set it to true
+  const handleClick = (clicked) => {
+    setIsClicked({...initialState, [clicked] : true});
+  }
 
   return (
-    <StateContext.Provider value={{ activeMenu, setActiveMenu }}>
+    //to have access on the navbar
+    <StateContext.Provider
+      value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick }}
+    >
       {children}
     </StateContext.Provider>
   );
