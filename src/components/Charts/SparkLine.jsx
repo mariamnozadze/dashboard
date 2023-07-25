@@ -5,7 +5,7 @@ import {
   SparklineTooltip,
 } from "@syncfusion/ej2-react-charts";
 
-//this should b a class component cause error shows up
+//this should be a class component cause error shows up
 class SparkLine extends React.PureComponent {
   render() {
     const { id, height, width, color, data, type, currentColor } = this.props;
