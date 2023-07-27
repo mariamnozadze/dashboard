@@ -1,11 +1,5 @@
-import React from 'react'
+import React from "react";
 
-const ChartsHeader = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+const ChartsHeader = () => <div className=" mb-10"></div>;
 
-export default ChartsHeader
+export default ChartsHeader;
