@@ -9,6 +9,7 @@ import {
   Legend,
   Tooltip,
 } from "@syncfusion/ej2-react-charts";
+
 import {
   lineCustomSeries,
   LinePrimaryXAxis,
@@ -17,9 +18,16 @@ import {
 import { useStateContext } from "../../contexts/ContextProvider";
 
 const LineChart = () => {
+  const { currentMode } = useStateContext();
+
   return (
     <ChartComponent>
-      <Inject />
+      <Inject services={[LineSeries, DateTime, Legend, Tooltip]} />
+      <SeriesCollectionDirective>
+        {lineCustomSeries.map((item, index) => (
+          <SeriesDirective key={index} {...item} />
+        ))}
+      </SeriesCollectionDirective>
     </ChartComponent>
   );
 };
