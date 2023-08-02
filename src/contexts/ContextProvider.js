@@ -38,26 +38,28 @@ export const ContextProvider = ({ children }) => {
   };
 
   //only change the value that has been cliked and set it to true
-  const handleClick = (clicked) => {
+  const handleClick = (clicked) =>
     setIsClicked({ ...initialState, [clicked]: true });
-  };
 
   return (
-    //to have access on the navbar
     <StateContext.Provider
       value={{
-        activeMenu,
-        setActiveMenu,
-        isClicked,
-        setIsClicked,
-        handleClick,
-        screenSize,
-        setScreenSize,
         currentColor,
         currentMode,
+        activeMenu,
+        screenSize,
+        setScreenSize,
+        handleClick,
+        isClicked,
+        initialState,
+        setIsClicked,
+        setActiveMenu,
+        setCurrentColor,
+        setCurrentMode,
+        setMode,
+        setColor,
         themeSettings,
         setThemeSettings,
-        setMode, setColor
       }}
     >
       {children}
